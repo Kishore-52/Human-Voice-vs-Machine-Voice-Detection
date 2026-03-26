@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Human vs Machine Voice Classification System (PRO VERSION)
 
 An advanced, production-ready, fully **OFFLINE** AI system to detect whether an audio snippet is a Human Voice or an AI-generated Machine Voice. Designed with strict adherence to local processing and maximum code modularity.
@@ -49,3 +50,6 @@ Once analyzed via `/predict`, the system returns the respective Model's confiden
 * **Uncertain ⚠**: < 0.65 
 
 Graphs showing log-mel spectrogram and local waveform amplitudes are displayed alongside the inference result cleanly.
+=======
+# Human-Voice-vs-Machine-Voice-Detection
+>>>>>>> 4249909040f9b15541e6b354c2bc85a0bca49c40
