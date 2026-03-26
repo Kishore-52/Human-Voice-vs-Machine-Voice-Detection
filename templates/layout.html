@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Classification System PRO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2.1">
+</head>
+<body>
+    <div class="bg-animated"></div>
+    <nav class="navbar glass">
+        <a href="/" class="brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="22"></line>
+            </svg>
+            VoiceDetect <span class="text-accent">PRO</span>
+        </a>
+        <div class="nav-links">
+            <a href="/" class="{{ 'active' if request.endpoint == 'index' else '' }}">Upload</a>
+            <a href="/dashboard" class="{{ 'active' if request.endpoint == 'dashboard' else '' }}">Dashboard</a>
+            <a href="/history" class="{{ 'active' if request.endpoint == 'history' else '' }}">History</a>
+        </div>
+    </nav>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

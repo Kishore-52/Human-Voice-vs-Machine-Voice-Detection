@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="card glass animate-in">
+    <div class="result-header">
+        <h2 class="mb-1">Analysis Complete</h2>
+        <p class="text-muted">Filename: <span style="color:var(--text-main);">{{ result.filename }}</span> | Model: <span style="color:var(--text-main);">{{ result.model }}</span></p>
+    </div>
+
+    <div class="text-center mt-2 mb-1 animate-in delay-1">
+        {% if 'Machine' in result.prediction %}
+            <div class="prediction-badge badge-machine">{{ result.prediction }}</div>
+        {% else %}
+            <div class="prediction-badge badge-human">{{ result.prediction }}</div>
+        {% endif %}
+        <h3>Confidence: {{ result.confidence }}%</h3>
+        <p class="text-muted">System Decision: <strong style="color:var(--text-main);">{{ result.decision }}</strong></p>
+        
+        <div class="confidence-bar-bg w-100" style="max-width: 400px; margin: 1.5rem auto;">
+            {% if result.decision == 'High Confidence ✅' %}
+                {% set bar_color = 'var(--success)' %}
+            {% elif result.decision == 'Needs Review ❓' %}
+                {% set bar_color = 'var(--warning)' %}
+            {% else %}
+                {% set bar_color = 'var(--danger)' %}
+            {% endif %}
+            {% set style_attr = 'style="width: ' ~ result.confidence ~ '%; background: ' ~ bar_color ~ ';"' %}
+            <div class="confidence-bar-fg" {{ style_attr | safe }}>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-2 mt-2 animate-in delay-2">
+        <div>
+            <h4>Waveform Visualization</h4>
+            <div class="chart-container" style="padding: 0.5rem; background:rgba(255,255,255,0.02)">
+               <img src="{{ url_for('static', filename=result.wave_url) }}" alt="Audio waveform" class="responsive">
+            </div>
+        </div>
+        <div>
+            <h4>Log-Mel Spectrogram</h4>
+            <div class="chart-container" style="padding: 0.5rem; background:rgba(255,255,255,0.02)">
+               <img src="{{ url_for('static', filename=result.spec_url) }}" alt="Mel Spectrogram" class="responsive">
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-2 animate-in delay-2">
+        <a href="/" class="btn btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:8px; vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            Analyze Another Recording
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="card glass animate-in">
+    <h2 class="text-center mb-1">Model Comparison Dashboard</h2>
+    <p class="text-center subtitle">Performance metrics computed during the local training process.</p>
+
+    {% if metrics %}
+        <div class="chart-container mb-1 animate-in delay-1">
+            <img src="{{ url_for('static', filename='model_comparison.png') }}" class="responsive" style="max-height: 400px; background: rgba(255,255,255,0.02);" alt="Model Comparison Chart">
+        </div>
+
+        <div style="overflow-x: auto;" class="animate-in delay-2">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Accuracy</th>
+                        <th>Precision</th>
+                        <th>Recall</th>
+                        <th>True Pos (AI)</th>
+                        <th>False Pos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for model, stats in metrics.items() %}
+                    <tr>
+                        <td><strong style="color:var(--text-main);">{{ model }}</strong></td>
+                        <td>{{ "%.2f"|format(stats.accuracy * 100) }}%</td>
+                        <td>{{ "%.2f"|format(stats.precision * 100) }}%</td>
+                        <td>{{ "%.2f"|format(stats.recall * 100) }}%</td>
+                        <td>{{ stats.true_pos }}</td>
+                        <td>{{ stats.false_pos }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="text-center" style="padding: 3rem;">
+            <p><strong style="color:var(--text-main);">Metrics currently unavailable.</strong></p>
+            <p class="text-muted">Please run `python train.py` first to generate models and evaluation statistics.</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

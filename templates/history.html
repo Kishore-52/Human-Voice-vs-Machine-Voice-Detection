@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="card glass animate-in">
+    <h2 class="text-center mb-1">Prediction History</h2>
+    <p class="text-center subtitle">Last 100 inferences made by the system</p>
+    
+    <div style="overflow-x: auto;" class="animate-in delay-1">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Filename</th>
+                    <th>Model Used</th>
+                    <th>Prediction</th>
+                    <th>Confidence</th>
+                    <th>System Decision</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in history %}
+                <tr>
+                    <td>#{{ row.id }}</td>
+                    <td style="color:var(--text-main);">{{ row.filename }}</td>
+                    <td>{{ row.model_used }}</td>
+                    <td class="{% if 'Machine' in row.prediction %}text-danger{% else %}text-success{% endif %}">
+                        <strong>{{ row.prediction }}</strong>
+                    </td>
+                    <td>{{ "%.2f"|format(row.confidence * 100) }}%</td>
+                    <td>{{ row.decision }}</td>
+                    <td><small>{{ row.timestamp }}</small></td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="7" class="text-center">No predictions have been made yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

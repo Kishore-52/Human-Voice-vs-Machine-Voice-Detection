@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="card glass animate-in">
+    <div class="text-center">
+        <h1>Detect AI-Generated Speech</h1>
+        <p class="subtitle">Upload an audio excerpt to classify if it is highly likely human or AI-generated.</p>
+    </div>
+
+    <form action="/predict" method="post" enctype="multipart/form-data" id="uploadForm" class="animate-in delay-1">
+        <label for="fileUpload" class="upload-box w-100" id="dropZone">
+            <div class="upload-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            </div>
+            <h3 id="uploadTitle">Drag & Drop Audio (.wav)</h3>
+            <p class="text-muted" id="uploadSubtitle">or click to browse from device</p>
+            <input type="file" name="audio_file" id="fileUpload" class="file-input" accept=".wav" required>
+        </label>
+
+        <div class="form-group">
+            <label for="modelSelect" class="form-label">Classification Model:</label>
+            <select name="model_choice" id="modelSelect" class="form-select">
+                <option value="cnn">Convolutional Neural Network (Primary)</option>
+                <option value="rf">Random Forest (Machine Learning)</option>
+                <option value="svm">Support Vector Machine</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="submitBtn" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Analyze Audio
+        </button>
+    </form>
+</div>
+
+<script>
+    const fileInput = document.getElementById('fileUpload');
+    const dropZone = document.getElementById('dropZone');
+    const submitBtn = document.getElementById('submitBtn');
+    const title = document.getElementById('uploadTitle');
+
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+            title.innerText = e.target.files[0].name;
+            submitBtn.disabled = false;
+        }
+    });
+
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+    });
+
+    dropZone.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files.length > 0) {
+            fileInput.files = e.dataTransfer.files;
+            title.innerText = e.dataTransfer.files[0].name;
+            submitBtn.disabled = false;
+        }
+    });
+</script>
+{% endblock %}
