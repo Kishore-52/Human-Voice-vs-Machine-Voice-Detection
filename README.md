@@ -31,7 +31,7 @@ The system combines **Deep Learning and Machine Learning techniques** to deliver
 ## 📊 Dataset
 
 -  **FoR – Fake or Real Dataset**
--  Total 198,000 audio samples  
+-  Total Audio Samples : ~198,000  
 -  Human Voices: ~111,000  
 -  Machine Voices: ~87,000  
 -  Audio Duration: 2 seconds  
