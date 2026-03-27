@@ -122,3 +122,54 @@ https://youtu.be/tdazqQU-XXI?si=E_t0Zdq3z_zrcYAb
 
 ```bash
 pip install -r requirements.txt
+
+---
+
+## ⚙️ **Run the Project**
+
+python train.py
+python app.py
+
+## **Open in Browser**
+
+http://127.0.0.1:5000
+
+---
+
+## **Project Structure**
+
+project/
+│── dataset/
+│── models/
+│── app.py
+│── train.py
+│── database.db
+│── db.py
+│── requirements.txt
+│── utils.py
+│── templates/
+│── static/
+
+---
+
+##💡 **Use Cases**
+
+🔐 Deepfake Voice Detection
+🧾 Audio Authentication Systems
+🛡️ Security & Fraud Prevention
+🎙️ Voice Verification Platforms
+
+---
+
+## 🚧 **Future Improvements**
+
+Real-time streaming voice detection
+Mobile application integration
+Advanced deepfake detection models
+Multi-language voice support
+
+---
+
+## **🔗 GitHub Repository**
+
+https://github.com/Kishore-52/Human-Voice-vs-Machine-Voice-Detection
