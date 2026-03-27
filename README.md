@@ -19,22 +19,22 @@ The system combines **Deep Learning and Machine Learning techniques** to deliver
 
 ## 🎯 Key Highlights
 
-- 🔍 Accurate classification of human vs AI-generated voices  
-- ⚡ Real-time prediction using a simple web interface  
-- 🧠 Hybrid model approach (CNN + ML models)  
-- 📊 Confidence-based intelligent decision system  
-- 🔒 Fully offline (no internet required)  
-- 📈 High performance with optimized feature extraction  
+-  Accurate classification of human vs AI-generated voices  
+-  Real-time prediction using a simple web interface  
+-  Hybrid model approach (CNN + ML models)  
+-  Confidence-based intelligent decision system  
+-  Fully offline (no internet required)  
+-  High performance with optimized feature extraction  
 
 ---
 
 ## 📊 Dataset
 
-- 📁 **FoR – Fake or Real Dataset**
-- 🎵 ~198,000 audio samples  
-- 🧑 Human Voices: ~111,000  
-- 🤖 Machine Voices: ~87,000  
-- ⏱️ Audio Duration: 2 seconds  
+-  **FoR – Fake or Real Dataset**
+-  ~198,000 audio samples  
+-  Human Voices: ~111,000  
+-  Machine Voices: ~87,000  
+-  Audio Duration: 2 seconds  
 - 🎧 Format: WAV  
 
 ---
@@ -69,9 +69,9 @@ We trained and compared multiple models:
 
 | Model           | Accuracy |
 |----------------|----------|
-| 🥇 CNN          | **99.9%** |
-| 🥈 Random Forest| 94.8%    |
-| 🥉 SVM          | 89.0%    |
+|  CNN          | **99.9%** |
+|  Random Forest| 94.8%    |
+|  SVM          | 89.0%    |
 
 👉 CNN performs best due to its ability to learn spatial patterns from spectrogram data.
 
@@ -98,11 +98,11 @@ https://youtu.be/tdazqQU-XXI?si=E_t0Zdq3z_zrcYAb
 
 ## 🖥️ Application Features
 
-- 📂 Upload audio file  
-- 📊 View waveform & spectrogram  
-- 🔍 Get prediction (Human / Machine)  
-- 📈 Confidence score display  
-- 🧠 Intelligent decision output  
+-  Upload audio file  
+-  View waveform & spectrogram  
+-  Get prediction (Human / Machine)  
+-  Confidence score display  
+-  Intelligent decision output  
 
 ---
 
@@ -169,10 +169,10 @@ project/
 
 ## 💡 Use Cases
 
-* 🎭 Deepfake voice detection
-* 🔐 Audio authentication systems
-* 🛡️ Security & fraud prevention
-* 🎙️ Voice verification platforms
+*  Deepfake voice detection
+*  Audio authentication systems
+*  Security & fraud prevention
+*  Voice verification platforms
 
 ---
 
@@ -181,7 +181,7 @@ project/
 * Real-time streaming voice detection
 * Mobile application integration
 * Advanced deep learning models (CNN/RNN)
-* Multi-language voice support
+
 
 ---
 
