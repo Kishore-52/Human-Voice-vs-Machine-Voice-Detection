@@ -31,7 +31,7 @@ The system combines **Deep Learning and Machine Learning techniques** to deliver
 ## 📊 Dataset
 
 -  **FoR – Fake or Real Dataset**
--  ~198,000 audio samples  
+-  Total 198,000 audio samples  
 -  Human Voices: ~111,000  
 -  Machine Voices: ~87,000  
 -  Audio Duration: 2 seconds  
@@ -180,7 +180,7 @@ project/
 
 * Real-time streaming voice detection
 * Mobile application integration
-* Advanced deep learning models (CNN/RNN)
+* Advanced deep learning models (CNN)
 
 
 ---
