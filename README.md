@@ -116,59 +116,75 @@ https://youtu.be/tdazqQU-XXI?si=E_t0Zdq3z_zrcYAb
 
 ---
 
+# 🎙️ Human vs Machine Voice Detection
+
+A machine learning-based web application that classifies whether a given voice sample is **human-generated** or **machine-generated**.
+
+---
+
 ## 🚀 Getting Started
 
-### 🔧 Installation
+### 🛠️ Installation
 
 ```bash
 pip install -r requirements.txt
+```
 
 ---
 
-## ⚙️ **Run the Project**
+### ▶️ Run the Project
 
+```bash
 python train.py
 python app.py
+```
 
-## **Open in Browser**
+---
 
+### 🌐 Open in Browser
+
+```
 http://127.0.0.1:5000
+```
 
 ---
 
-## **Project Structure**
+## 📁 Project Structure
 
+```
 project/
-│── dataset/
-│── models/
-│── app.py
-│── train.py
-│── database.db
-│── db.py
-│── requirements.txt
-│── utils.py
-│── templates/
-│── static/
+│── dataset/         # Audio dataset
+│── models/          # Trained models
+│── app.py           # Flask application
+│── train.py         # Training script
+│── database.db      # Database file
+│── db.py            # Database logic
+│── requirements.txt # Dependencies
+│── utils.py         # Helper functions
+│── templates/       # HTML templates
+│── static/          # CSS, JS, assets
+```
 
 ---
 
-##💡 **Use Cases**
+## 💡 Use Cases
 
-🔐 Deepfake Voice Detection
-🧾 Audio Authentication Systems
-🛡️ Security & Fraud Prevention
-🎙️ Voice Verification Platforms
+* 🎭 Deepfake voice detection
+* 🔐 Audio authentication systems
+* 🛡️ Security & fraud prevention
+* 🎙️ Voice verification platforms
+
+---
+
+## 🔮 Future Improvements
+
+* Real-time streaming voice detection
+* Mobile application integration
+* Advanced deep learning models (CNN/RNN)
+* Multi-language voice support
 
 ---
 
-## 🚧 **Future Improvements**
-
-Real-time streaming voice detection
-Mobile application integration
-Advanced deepfake detection models
-Multi-language voice support
-
----
 
 ## **🔗 GitHub Repository**
 
